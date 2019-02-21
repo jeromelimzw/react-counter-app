@@ -1,6 +1,8 @@
-export const counters = [
-  { id: 1, value: 0},
-  { id: 2, value: 0 },
-  { id: 3, value: 0 }
-  { id: 4, value: 0 }
+const counters = [
+  { id: 4582687, value: 0 },
+  { id: 1234567, value: 0 },
+  { id: 8523965, value: 0 },
+  { id: 1597533, value: 0 }
 ];
+
+export default counters;
