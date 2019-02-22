@@ -6,7 +6,7 @@ const Counter = ({ value, handleDecrement, handleIncrement, handleDelete }) => {
       <span
         className={`w-30 f2 fw7 ${
           value < 0 ? "bg-red" : value > 0 ? "bg-green" : "bg-gold"
-        } br3 near-white shadow-5 ma1`}
+        } br3 near-white shadow-5 ma1 animated flipInX`}
       >
         {value === 0 ? "zero" : value}
       </span>
