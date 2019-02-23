@@ -1,8 +1,12 @@
 import React from "react";
 
-const ExtraButtons = ({ handleAddCounter, handleClear }) => {
+const ExtraButtons = ({ handleAddCounter, handleClear, handleDeleteAll }) => {
   return (
-    <div className="w-100 flex justify-between bg-light-green br3 pa2 shadow-5">
+    <div className="w-100 flex justify-between bg-lightest-blue br3 pa2 shadow-5">
+      <i
+        onClick={handleDeleteAll}
+        class="fas fa-ban light-red f2 pointer grow br-100 shadow-5 "
+      />
       <input
         type="button"
         value="CLEAR"

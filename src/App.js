@@ -44,6 +44,10 @@ export class App extends Component {
     this.setState({ counters: nextState });
   };
 
+  handleDeleteAll = () => {
+    this.setState({ counters: [] });
+  };
+
   render() {
     const { counters } = this.state;
     const {
@@ -51,7 +55,8 @@ export class App extends Component {
       handleDecrement,
       handleIncrement,
       handleDelete,
-      handleClear
+      handleClear,
+      handleDeleteAll
     } = this;
     const totalcounters = counters.length;
     const totalcount = counters.reduce((a, b) => a + b.value, 0);
@@ -62,6 +67,7 @@ export class App extends Component {
         <ExtraButtons
           handleAddCounter={handleAddCounter}
           handleClear={handleClear}
+          handleDeleteAll={handleDeleteAll}
         />
         <TotalCounts
           totalcounters={totalcounters}
