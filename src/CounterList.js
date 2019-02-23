@@ -7,9 +7,9 @@ const CounterList = ({ counters, handleDecrement,handleIncrement,handleDelete })
       {counters.map(item => {
         return (
           <Counter
+            key={itme.id}
             id={item.id}
             value={item.value}
-            key={Math.round(Math.random() * 10000)}
             handleDecrement={() => {
               handleDecrement(item.id);
             }}
