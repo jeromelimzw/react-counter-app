@@ -5,7 +5,7 @@ const ExtraButtons = ({ handleAddCounter, handleClear, handleDeleteAll }) => {
     <div className="w-100 flex justify-between bg-lightest-blue br3 pa2 shadow-5">
       <i
         onClick={handleDeleteAll}
-        class="fas fa-ban light-red f2 pointer grow br-100 shadow-5 "
+        className="fas fa-ban light-red f2 pointer grow br-100 shadow-5 "
       />
       <input
         type="button"

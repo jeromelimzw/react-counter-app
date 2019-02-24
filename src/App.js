@@ -3,6 +3,7 @@ import counters from "./sampleData";
 import CounterList from "./CounterList";
 import ExtraButtons from "./ExtraButtons";
 import TotalCounts from "./TotalCounts";
+import produce from "immer";
 
 export class App extends Component {
   constructor() {
@@ -11,22 +12,23 @@ export class App extends Component {
   }
 
   handleAddCounter = () => {
-    const nextState = [
-      ...this.state.counters,
-      { id: Math.round(Math.random() * 100000), value: 0 }
-    ];
+    const nextState = produce(this.state.counters, draft => {
+      draft.push({ id: Math.round(Math.random() * 100000), value: 0 });
+    });
     this.setState({ counters: nextState });
   };
 
   handleDecrement = tarId => {
-    const nextState = this.state.counters;
-    nextState.find(a => a.id === tarId).value--;
+    const nextState = produce(this.state.counters, draft => {
+      draft.find(a => a.id === tarId).value--;
+    });
     this.setState({ counters: nextState });
   };
 
   handleIncrement = tarId => {
-    const nextState = this.state.counters;
-    nextState.find(a => a.id === tarId).value++;
+    const nextState = produce(this.state.counters, draft => {
+      draft.find(a => a.id === tarId).value++;
+    });
     this.setState({ counters: nextState });
   };
 
